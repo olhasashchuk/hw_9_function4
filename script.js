@@ -25,18 +25,17 @@ function Car (make = prompt('Enter the make car'),
     this.make = make;
     this.model = model;
     this.year = year;
+    this.owner = null;
+    this.setOwner = function(user) {
+        this.owner = user;
+    };
 }
 
 const carFirst = new Car ();
-
+carFirst.setOwner(UserFirst);
 document.getElementById("make").innerHTML = 'Make: ' + carFirst.make;
 document.getElementById("model").innerHTML = 'Model: ' + carFirst.model;
 document.getElementById("year").innerHTML = 'Year: ' + carFirst.year;
+document.getElementById("owner").innerHTML = 'Owner: ' + carFirst.owner.name + ', age: ' + carFirst.owner.age;
 
-
-function ownerOfCar () {
-   return Object.assign({}, UserFirst, carFirst);
-}
-
-console.log(ownerOfCar());
 
